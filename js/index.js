@@ -12,6 +12,7 @@ async function generateAdvise(){
     })
     .then(data=>{
        advice = data;
+       console.log(advice.slip.id)
        console.log(advice.slip.advice)
     })
     .catch(error => {
