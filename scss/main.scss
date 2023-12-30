@@ -1,0 +1,77 @@
+@import "config.scss";
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 28px;
+    font-family: "Manrope", sans-serif;
+    color: $color1;
+    font-weight: 800;
+}
+
+
+body{
+    background: $color5;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+main{
+    margin: auto;
+    .advise{
+        &_block{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: $color4;
+            padding: 1.4rem;
+            border-radius: 0.5rem;
+            max-width: 30vw;
+
+            #text{
+                font-size: 0.6rem;
+                color: $color2;
+                letter-spacing: 0.2rem;
+            }
+
+            &_advise-container{
+                padding: 1.4rem 0;
+                #advise-text{
+                    text-align: center;
+                }
+            }
+
+            #divider{
+                padding-bottom: 0.9rem;
+                width: 100%;
+            }
+
+            #icon-dice-container{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);
+                width: 2rem;
+                height: 2rem;
+                background: $color2;
+                border-radius: 50%;
+                &:hover{
+                    box-shadow: 0 0 1.5rem $color2;
+                    cursor: pointer;
+                }
+                #icon-dice{
+                    width: 0.8rem;
+                }
+            }
+        }
+    }
+}
