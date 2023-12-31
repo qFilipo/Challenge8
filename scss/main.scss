@@ -75,9 +75,18 @@ main{
                 padding-bottom: 0.9rem;
             }
 
+            #color-btn{
+                font-size: 0.4rem;
+                span{
+                    font-size: 0.4rem;
+                    color:$color2;
+                }
+            }
+
             #icon-dice-container{
                 position: absolute;
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 bottom: 0;

@@ -6,11 +6,14 @@ const btn=document.getElementById("icon-dice-container")
 btn.style.background = "grey"
 btn.style.boxShadow = "0 0 0 grey";
 
-setInterval(function(){
-    if(advice.length <=10){
-        generateAdvice()
-    }
-}, 5000)
+setTimeout(function(){
+    setInterval(function(){
+        if(advice.length <=10){
+            generateAdvice()
+        }
+    }, 2000)
+},3000)
+
 
 function generateAdvice(){
     fetch("https://api.adviceslip.com/advice")

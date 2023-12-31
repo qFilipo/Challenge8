@@ -111,9 +111,17 @@ main .advise_block_advise-container #advise-text #dot3 {
 main .advise_block #divider {
   padding-bottom: 0.9rem;
 }
+main .advise_block #color-btn {
+  font-size: 0.4rem;
+}
+main .advise_block #color-btn span {
+  font-size: 0.4rem;
+  color: hsl(150, 100%, 66%);
+}
 main .advise_block #icon-dice-container {
   position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   bottom: 0;
