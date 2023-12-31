@@ -38,11 +38,75 @@ main .advise_block #text {
   color: hsl(150, 100%, 66%);
   letter-spacing: 0.2rem;
 }
+main .advise_block #text #number {
+  font-size: 0.6rem;
+  color: hsl(150, 100%, 66%);
+  letter-spacing: 0.2rem;
+}
 main .advise_block_advise-container {
   padding: 1.4rem 0;
 }
 main .advise_block_advise-container #advise-text {
   text-align: center;
+}
+main .advise_block_advise-container #advise-text #dot1 {
+  display: inline-block;
+  padding: 0 0 0 0.2rem;
+  animation: up-down1 2.5s ease-in-out infinite;
+}
+@keyframes up-down1 {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-0.2rem);
+    color: hsl(150, 100%, 66%);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+main .advise_block_advise-container #advise-text #dot2 {
+  display: inline-block;
+  padding: 0 0.2rem;
+  animation: up-down2 2.5s ease-in-out infinite;
+}
+@keyframes up-down2 {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-0.2rem);
+    color: hsl(150, 100%, 66%);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+main .advise_block_advise-container #advise-text #dot3 {
+  display: inline-block;
+  animation: up-down3 2.5s ease-in-out infinite;
+}
+@keyframes up-down3 {
+  0% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-0.2rem);
+    color: hsl(150, 100%, 66%);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 main .advise_block #divider {
   padding-bottom: 0.9rem;

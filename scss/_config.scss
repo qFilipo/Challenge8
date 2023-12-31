@@ -5,3 +5,58 @@ $color4:hsl(217, 19%, 24%);
 $color5: hsl(218, 23%, 16%);
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700&family=Manrope&display=swap');
+
+
+@mixin animationDot1{
+    @keyframes up-down1{
+        0% {
+            transform: translateY(0);
+        }
+        20% {
+            transform: translateY(-0.2rem);
+            color: $color2;
+        }
+        40% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+@mixin animationDot2{
+    @keyframes up-down2{
+        0% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-0.2rem);
+            color: $color2;
+        }
+        60% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+@mixin animationDot3{
+    @keyframes up-down3{
+        0% {
+            transform: translateY(0);
+        }
+        60% {
+            transform: translateY(-0.2rem);
+            color: $color2;
+        }
+        80% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}

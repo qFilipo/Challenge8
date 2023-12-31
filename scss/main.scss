@@ -39,12 +39,35 @@ main{
                 font-size: 0.6rem;
                 color: $color2;
                 letter-spacing: 0.2rem;
+                #number{
+                    font-size: 0.6rem;
+                    color: $color2;
+                    letter-spacing: 0.2rem;
+                }
             }
 
             &_advise-container{
                 padding: 1.4rem 0;
                 #advise-text{
                     text-align: center;
+
+                    #dot1{
+                        display: inline-block;
+                        padding: 0 0 0 0.2rem;
+                        animation: up-down1 2.5s ease-in-out infinite;
+                        @include animationDot1;
+                    }
+                    #dot2{
+                        display: inline-block;
+                        padding: 0 0.2rem;
+                        animation: up-down2 2.5s ease-in-out infinite;
+                        @include animationDot2;
+                    }
+                    #dot3{
+                        display: inline-block;
+                        animation: up-down3 2.5s ease-in-out infinite;
+                        @include animationDot3;
+                    }
                 }
             }
 
