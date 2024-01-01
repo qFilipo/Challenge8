@@ -1,19 +1,14 @@
-let advice = new Array;
+let advice = new Object;
 let i=0;
 let firstLog = true;
+let isClickable = true;
 
+const textAdvice=document.getElementById("advise-text");
+const idAdvice=document.getElementById("number");
 const btn=document.getElementById("icon-dice-container")
+
 btn.style.background = "grey"
 btn.style.boxShadow = "0 0 0 grey";
-
-setTimeout(function(){
-    setInterval(function(){
-        if(advice.length <=10){
-            generateAdvice()
-        }
-    }, 2000)
-},3000)
-
 
 function generateAdvice(){
     fetch("https://api.adviceslip.com/advice")
@@ -24,14 +19,18 @@ function generateAdvice(){
             return response.json();
         })
         .then(data=>{
-                advice.push(data);
                 if (firstLog===true){
+                    textAdvice.textContent = '"'+data.slip.advice+'"';
+                    advice = data;
+                    idAdvice.textContent = data.slip.id;
+                    firstLog=false
                     checkAdvice()
-                    firstLog = false
+                }
+                else{
+                    advice = data;
                     setTimeout(function(){
-                        btn.style.background = ""
-                        btn.style.boxShadow = "";
-                    },5000)
+                        checkAdvice()
+                    },2500)
                 }
         })
         .catch(error => {
@@ -54,40 +53,29 @@ function changeImg(){
 }
 
 function btnAdvice(){
-    let isClickable = true
     btn.addEventListener("click", ()=> {
         if (isClickable){
-
+            textAdvice.textContent = '"'+advice.slip.advice+'"'
+            idAdvice.textContent = advice.slip.id
             isClickable = false
             btn.style.background = "grey"
             btn.style.boxShadow = "0 0 0 grey";
-
             checkAdvice()
-
-            advice.shift()
-            console.log(advice)
-
-            setTimeout(function(){
-                btn.style.background = ""
-                btn.style.boxShadow = "";
-                isClickable = true
-            }, 5000)
         }
     })
 }      
 
 function checkAdvice(){
-    const textAdvice=document.getElementById("advise-text")
-    const idAdvice=document.getElementById("number")
-    if(textAdvice.textContent != '"'+advice[0].slip.advice+'"'){
-        textAdvice.textContent = '"'+advice[0].slip.advice+'"'
-        idAdvice.textContent = advice[0].slip.id
+    if(textAdvice.textContent != '"'+advice.slip.advice+'"'){
+        btn.style.background = "";
+        btn.style.boxShadow = "";
+        isClickable = true;
     }
     else{
-        advice.shift()
-        checkAdvice()
+        generateAdvice()
     }
 }
 
-changeImg()
 btnAdvice()
+changeImg()
+generateAdvice()
