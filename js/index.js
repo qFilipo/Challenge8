@@ -28,9 +28,7 @@ function generateAdvice(){
                 }
                 else{
                     advice = data;
-                    setTimeout(function(){
-                        checkAdvice()
-                    },2500)
+                    checkAdvice()
                 }
         })
         .catch(error => {
